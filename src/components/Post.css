@@ -1,0 +1,66 @@
+.post {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .post.light-mode {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .post.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .star-rating {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .star-rating span {
+    font-size: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .star-rating span:hover {
+    color: gold;
+  }
+  
+  .comments-section {
+    margin-top: 15px;
+  }
+  
+  .comments-section p {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .like-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .like-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .like-button.liked {
+    background-color: #28a745;
+  }
+  

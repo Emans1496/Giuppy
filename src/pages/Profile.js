@@ -1,32 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Button, Container } from 'react-bootstrap';
+import { ThemeContext } from '../context/ThemeContext';  // Importiamo il contesto del tema
+import './Profile.css';
 
 function Profile() {
-  // Simuliamo i dati del profilo dell'utente
-  const [username, setUsername] = useState('GiuppyUser1');
-  const [bio, setBio] = useState('Amo osservare le stelle!');
+  const { isDarkMode } = useContext(ThemeContext);  // Otteniamo il tema corrente
+  const [isFollowing, setIsFollowing] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Qui faremo una chiamata API per aggiornare il profilo
-    console.log({ username, bio });
+  const handleFollowClick = () => {
+    setIsFollowing(!isFollowing);
   };
 
   return (
-    <div className="profile-container">
+    <Container className={`profile-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <h2>Il mio profilo</h2>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
-        />
-        <textarea 
-          value={bio} 
-          onChange={(e) => setBio(e.target.value)} 
-        />
-        <button type="submit">Aggiorna profilo</button>
-      </form>
-    </div>
+      <p>Nome utente: GiuppyUser</p>
+      <p>Bio: Amo osservare le stelle!</p>
+
+      <Button variant={isFollowing ? "danger" : "primary"} onClick={handleFollowClick}>
+        {isFollowing ? 'Smetti di Seguire' : 'Segui'}
+      </Button>
+    </Container>
   );
 }
 

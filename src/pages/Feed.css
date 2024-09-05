@@ -1,0 +1,109 @@
+.feed-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .feed-container.light-mode {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+  
+  .feed-container.dark-mode {
+    background-color: #1e1e1e;
+    color: #ddd;
+  }
+  
+  /* Stile per il form */
+  .post-form {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Immagine del profilo */
+  .profile-img-container {
+    margin-right: 10px;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Area di testo */
+  .input-text {
+    border: none;
+    padding: 10px;
+    resize: none;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input-text::placeholder {
+    color: #888;
+  }
+  
+  /* Icona di caricamento immagine */
+  .upload-icon-container {
+    margin-left: 10px;
+  }
+  
+  .upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+  }
+  
+  .upload-label:hover {
+    color: #000;
+  }
+  
+  /* Input file nascosto */
+  .file-input {
+    display: none;
+  }
+  
+  /* Stile esistente per i post */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .post {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .feed-container {
+      max-width: 800px;
+    }
+  }
+  
