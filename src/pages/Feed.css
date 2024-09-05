@@ -1,109 +1,50 @@
-.feed-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .feed-container.light-mode {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-  
-  .feed-container.dark-mode {
-    background-color: #1e1e1e;
-    color: #ddd;
-  }
-  
-  /* Stile per il form */
-  .post-form {
-    background-color: #fff;
+/* Barra di creazione post */
+.post-form {
+    background-color: #f1f1f1;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Immagine del profilo */
-  .profile-img-container {
-    margin-right: 10px;
-  }
-  
-  .profile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  /* Area di testo */
-  .input-text {
-    border: none;
-    padding: 10px;
-    resize: none;
-    font-size: 16px;
-    outline: none;
-  }
-  
-  .input-text::placeholder {
-    color: #888;
-  }
-  
-  /* Icona di caricamento immagine */
-  .upload-icon-container {
-    margin-left: 10px;
-  }
-  
-  .upload-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    font-size: 24px;
-    color: #888;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
   }
   
-  .upload-label:hover {
-    color: #000;
-  }
-  
-  /* Input file nascosto */
-  .file-input {
+  input[type="file"] {
     display: none;
   }
   
-  /* Stile esistente per i post */
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
+  .post-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   
-  button {
+  .option-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #f1f1f1;
     border: none;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
   }
   
-  button:hover {
-    background-color: #0056b3;
+  .option-button svg {
+    margin-right: 10px;
   }
   
-  .post {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+  .option-button:hover {
+    background-color: #e2e2e2;
   }
   
-  @media (min-width: 768px) {
-    .feed-container {
-      max-width: 800px;
-    }
+  input[type="file"] {
+    display: none;
   }
   

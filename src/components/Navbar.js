@@ -1,29 +1,50 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import { ThemeContext } from '../context/ThemeContext';  // Importiamo il contesto del tema
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faSearch, faBell, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
+import './Navbar.css';
 
-function Navbar() {
-  const { user, logout } = useContext(AuthContext);
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
-
+function Navbar({ onPostClick }) {
   return (
-    <nav className={`navbar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-      <ul>
-        <li><Link to="/feed">Feed</Link></li>
-        <li><Link to="/profile">Profilo</Link></li>
-        {user ? (
-          <>
-            <li>{user.name}</li>
-            <li><button onClick={logout}>Logout</button></li>
-          </>
-        ) : (
-          <li><Link to="/">Login</Link></li>
-        )}
+    <nav className="bottom-navbar">
+      <ul className="navbar-menu">
+        {/* Feed */}
         <li>
-          <button onClick={toggleTheme}>
-            {isDarkMode ? 'Tema Chiaro' : 'Tema Scuro'}
+          <a href="/feed">
+            <FontAwesomeIcon icon={faHome} className="navbar-icon" />
+            <span>Feed</span>
+          </a>
+        </li>
+
+        {/* Cerca */}
+        <li>
+          <a href="/search">
+            <FontAwesomeIcon icon={faSearch} className="navbar-icon" />
+            <span>Cerca</span>
+          </a>
+        </li>
+
+        {/* Post */}
+        <li>
+          <button className="navbar-button" onClick={onPostClick}>
+            <FontAwesomeIcon icon={faPlus} className="navbar-icon" />
+            <span>Post</span>
           </button>
+        </li>
+
+        {/* Notifiche */}
+        <li>
+          <a href="/notifications">
+            <FontAwesomeIcon icon={faBell} className="navbar-icon" />
+            <span>Notifiche</span>
+          </a>
+        </li>
+
+        {/* Profilo */}
+        <li>
+          <a href="/profile">
+            <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+            <span>Profilo</span>
+          </a>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,66 @@
+/* Posiziona la navbar in basso */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-menu li {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .navbar-menu a, .navbar-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar-menu a:hover, .navbar-button:hover {
+    color: #007bff;
+  }
+  
+  .navbar-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Stile del testo sotto le icone */
+  .navbar-menu span {
+    font-size: 12px;
+  }
+  
+  /* Colore attivo per la pagina corrente (facoltativo) */
+  .navbar-menu a.active {
+    color: #007bff;
+  }
+  
