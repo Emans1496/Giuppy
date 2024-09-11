@@ -1,31 +1,122 @@
-.profile-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .profile-container.light-mode {
-    background-color: #f0f0f0;
-    color: #000;
-  }
-  
-  .profile-container.dark-mode {
-    background-color: #1e1e1e;
-    color: #ddd;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+.profile-page {
+  padding: 20px;
+}
+
+.profile-page.light-mode {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.profile-page.dark-mode {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  text-align: center;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-profile-btn {
+  margin-top: 15px;
+}
+
+.profile-username {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-bio {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.follow-button {
+  margin-top: 10px;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-tab {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+}
+
+.profile-tab.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.user-posts, .user-photos, .user-friends {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo-item {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.friends-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.friend-item {
+  text-align: center;
+}
+
+.friend-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.custom-arrow {
+  background-color: rgba(0, 0, 0, 0.5); /* Nero trasparente */
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: none; /* Nasconde le icone predefinite */
+}
+

@@ -36,6 +36,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0px;
   }
   
   .navbar-menu a:hover, .navbar-button:hover {

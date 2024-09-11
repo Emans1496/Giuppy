@@ -1,66 +1,221 @@
+/* Stile per il contenitore del post */
 .post {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  .post.light-mode {
-    background-color: #fff;
-    color: #000;
-  }
-  
-  .post.dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .star-rating {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-  }
-  
-  .star-rating span {
-    font-size: 20px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .star-rating span:hover {
-    color: gold;
-  }
-  
-  .comments-section {
-    margin-top: 15px;
-  }
-  
-  .comments-section p {
-    margin: 0;
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .post-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  
-  .like-button {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .like-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .like-button.liked {
-    background-color: #28a745;
-  }
-  
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 100%; /* Fullwidth */
+}
+
+/* Stile per la modalità dark */
+.post.dark-mode {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #ddd;
+}
+
+/* Stile per l'header del post */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Stile per l'immagine profilo */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Stile per le informazioni utente */
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}
+
+.username.dark-mode {
+  color: #fff;
+}
+
+/* Stile per il posizionamento di stato d'animo e posizione */
+.user-info .post-details {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.user-info .post-details.dark-mode {
+  color: #bbb;
+}
+
+/* Stile per l'immagine o il video del post */
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Stile per il contenitore like e commenti */
+.post-interactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Stile per il pulsante Mi Piace */
+.like-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.like-button svg {
+  font-size: 20px;
+  margin-right: 5px;
+  transition: color 0.2s ease;
+}
+
+.like-button.liked svg {
+  color: #ff0000; /* Colore cuore rosso */
+}
+
+.like-button.liked {
+  color: #ff0000;
+}
+
+.like-button:hover {
+  color: #ff0000;
+}
+
+/* Stile per l'icona commento */
+.comment-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.comment-button svg {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.comment-button:hover {
+  color: #007bff;
+}
+
+/* Stile per la sezione commenti */
+.comments-section {
+  margin-top: 10px;
+}
+
+.comments-section .comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.comments-section .comment-author {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comments-section .comment-time {
+  font-size: 12px;
+  color: #888;
+  margin-left: auto;
+}
+
+.comments-section .comment-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.comments-section .comment-text.dark-mode {
+  color: #ddd;
+}
+
+/* Stile per il bottone visualizza altri commenti */
+.view-more-comments {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.view-more-comments:hover {
+  text-decoration: underline;
+}
+
+/* Input per aggiungere un commento */
+.comment-input-container {
+  display: none; /* Nascondiamo l'input finché l'utente non clicca sull'icona commento */
+}
+
+.comment-input-container.active {
+  display: block;
+  margin-top: 10px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Stile per il pulsante per aggiungere un commento */
+.add-comment-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-comment-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Stile per la data del post */
+.post-date {
+  font-size: 12px;
+  color: #888;
+  margin-left: auto;
+  display: flex;
+}

@@ -1,50 +1,108 @@
-/* Barra di creazione post */
-.post-form {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  input[type="file"] {
-    display: none;
-  }
-  
-  .post-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .option-button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: #f1f1f1;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .option-button svg {
-    margin-right: 10px;
-  }
-  
-  .option-button:hover {
-    background-color: #e2e2e2;
-  }
-  
-  input[type="file"] {
-    display: none;
-  }
-  
+/* Assicurati che la seconda modale copra completamente la prima */
+.mood-modal .modal-dialog,
+.location-modal .modal-dialog {
+  max-width: 100%; /* Stessa larghezza della modale principale */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.mood-modal .modal-content,
+.location-modal .modal-content {
+  height: 100%; /* Altezza massima per coprire tutta la pagina */
+}
+
+/* Griglia per gli stati d'animo/attività */
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.mood-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.mood-option:hover {
+  background-color: #f1f1f1;
+}
+
+.mood-emoji {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.mood-label {
+  font-size: 16px;
+}
+
+.selected-mood {
+  font-size: 16px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Contenitore per l'anteprima dell'immagine o video nel post */
+.preview-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Stile per l'immagine dell'anteprima */
+.preview-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Stile per il video dell'anteprima */
+.preview-video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Stile del form per inserire la posizione nella modale */
+.location-modal .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.location-modal .modal-content {
+  padding: 20px;
+}
+
+/* Modale posizione con altezza e larghezza massima */
+.location-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+}
+
+/* Backdrop della seconda modale che copre la prima */
+.modal-backdrop.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Opacità più alta per coprire meglio */
+  z-index: 1050; /* Assicurati che sia sopra la prima modale */
+}
+
+/* Modal principale con livello di z-index inferiore alla seconda */
+.modal.fade.show {
+  z-index: 1060; /* Assicurati che la seconda modale sia sopra la prima */
+}
